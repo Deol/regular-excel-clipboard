@@ -1,0 +1,37 @@
+<div class="ec-m-clipboard {class}">
+    <div
+        autofocus
+        ref="clipboard"
+        contenteditable="true"
+        class="ec-u-clipboard"
+        on-paste={this.paste($event)}
+        data-placeholder="在这里粘贴从Excel表中复制的数据，注意确保粘贴表头哦~"
+    >{#if list && list.length}
+        <table class="ec-m-table" ref="table">
+            <colgroup>
+                {#list list[0] as item by item_index}
+                <col>
+                {/list}
+            </colgroup>
+            <thead>
+                <tr>
+                    {#list list[0] as subItem by subItem_index}
+                    <th contenteditable="plaintext-only">{subItem}</th>
+                    {/list}
+                </tr>
+            </thead>
+            <tbody>
+            {#list list as item by item_index}
+                {#if item_index !== 0}
+                <tr>
+                    {#list item as subItem by subItem_index}
+                    <td contenteditable="plaintext-only">{subItem}</td>
+                    {/list}
+                </tr>
+                {/if}
+            {/list}
+            </tbody>
+        </table>
+    {/if}</div>
+    <button class="ec-u-btn ec-u-btn-primary" on-click={this.getInfo()}>获取数据</button>
+</div>

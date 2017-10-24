@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Excel Clipboard</title>
+    <!-- import reset.css -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <!-- import RegularJS -->
+    <script src="https://unpkg.com/regularjs@0.4.3/dist/regular.min.js"></script>
+    <!-- import the clipboard component -->
+    <script src="./dist/clipboard.total.js"></script>
+    <!-- usage -->
+    <script>
+        var Page = Regular.extend({
+            template: `<clipboard on-getInfo={this.getInfo($event)} />`,
+            getInfo: function(info) {
+                console.log('getInfo:', info);
+            }
+        }).component('clipboard', regularExcelClipboard);
+        new Page({data: {}}).$inject(document.getElementById('box'));
+    </script>
+</body>
+</html>

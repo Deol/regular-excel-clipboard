@@ -1,0 +1,20 @@
+<div class="ec-m-modal {class}">
+    <div class="ec-modal_dialog">
+        <div class="ec-modal_hd">
+            <a title="关闭" class="ec-modal_close" on-click={this.close()}>
+                <i class="ec-u-icon ec-u-icon-close">×</i>
+            </a>
+            <h3 class="ec-modal_title">{title}</h3>
+        </div>
+        <div class="ec-modal_bd">
+            <h5>{text}</h5>
+            {#if subText}
+            <p>{subText}</p>
+            {/if}
+        </div>
+        <div class="ec-modal_ft">
+            <button r-autofocus class="ec-u-btn ec-u-btn-primary" title="确认" on-click={this.ok()}>{okButton === true ? '确定' : okButton}</button>
+            <button class="ec-u-btn" title="取消" on-click={this.cancel()}>{cancelButton === true ? '取消' : cancelButton}</button>
+        </div>
+    </div>
+</div>

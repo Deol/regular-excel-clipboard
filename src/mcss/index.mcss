@@ -1,0 +1,73 @@
+@import './_reset.mcss';
+
+.ec-m-clipboard .ec-u-btn-primary {
+  display: block;
+  margin: 10px auto;
+}
+.ec-u-clipboard {
+  padding: 10px;
+  min-height: 700px;
+  overflow-y: scroll;
+  border: 1px solid #ddd;
+  outline: none;
+  &:empty:before {
+    content: attr(data-placeholder);
+    color: #999;
+  }
+}
+
+.ec-m-table {
+  table-layout: fixed;
+  width: 100%;
+  line-height: 1.5;
+  font-size: 12px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: #fff;
+  overflow: auto;
+  col {
+    width: 150px;
+    max-width: 150px;
+  }
+  caption {
+    font-size: 12px;
+    color: #999;
+  }
+  thead {
+    background: #f5f5f5;
+  }
+  tbody {
+    tr:nth-child(2n){
+      background: #F6F9FC;
+    }
+  }
+  th, td{
+    padding:14px 8px;
+    text-align: left;
+    word-wrap: break-word;
+    border: 1px solid #ddd;
+  }
+  th {
+    background: #EEF1F4;
+  }
+  td {
+    width: auto;
+    padding: 10px 8px;
+  }
+}
+
+.ec-m-modal .ec-modal_bd {
+  h5 {
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  p {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    line-height: 24px;
+  }
+}
